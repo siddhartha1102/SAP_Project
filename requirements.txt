@@ -276,9 +276,9 @@ yfinance==0.2.63
 streamlit==1.38.0
 pandas==2.2.2
 openpyxl==3.1.5
-xlsxwriter==3.2.0
 pillow==10.4.0
 numpy==2.1.1
+
 
 
 
