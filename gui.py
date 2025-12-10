@@ -18,7 +18,7 @@ try:
         uploaded_file = st.file_uploader("Upload the file", type="xlsx")
 
         if uploaded_file:
-            dest = os.path.join(os.getcwd(), "Excel_files", "temp.xlsx")
+            dest = os.path.join(os.getcwd(), "temp.xlsx")
             pd.read_excel(uploaded_file).to_excel(dest, index=False)
             df=pd.read_excel(dest)
             image_to_text(uploaded_file,dest)
@@ -38,7 +38,7 @@ try:
                            data=template_byte,
                            file_name=filename,
                            mime='application/octet-stream')
-            os.remove(os.path.join(os.getcwd(),"Excel_files","temp.xlsx"))
+            os.remove(os.path.join(os.getcwd(),"temp.xlsx"))
 
 
 
@@ -47,6 +47,7 @@ try:
         st.error(e)
 except Exception as e:
     st.error(e)
+
 
 
 
