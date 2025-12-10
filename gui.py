@@ -2,7 +2,7 @@ try:
     import os
     import streamlit as st
     import pandas as pd
-    #from replace_image_text import image_to_text
+    from replace_image_text import image_to_text
     from excel_date import date_conversion
     from highlight import hihglight
     from remove import remove
@@ -45,6 +45,7 @@ try:
         st.write(e)
 except Exception as e:
     st.error(e)
+
 
 
 
