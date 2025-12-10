@@ -43,5 +43,6 @@ try:
     
     except Exception as e:
         st.write(e)
-    
-        st.error(e)p
+except Exception as e:
+    st.error(e)p
+
