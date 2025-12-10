@@ -17,7 +17,7 @@ try:
     try:
         uploaded_file = st.file_uploader("Upload the file", type="xlsx")
     
-        dest=os.path.join(os.getcwd(), "Excel_files","temp.xlsx")
+        dest=os.path.join(os.getcwd(), "temp.xlsx")
         if uploaded_file:
             df=pd.read_excel(dest)
             image_to_text(uploaded_file,dest)
@@ -45,6 +45,7 @@ try:
         st.write(e)
 except Exception as e:
     st.error(e)
+
 
 
 
