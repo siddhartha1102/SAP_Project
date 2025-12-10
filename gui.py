@@ -19,8 +19,8 @@ try:
     
         
         if uploaded_file:
-            dest=os.path.join(os.getcwd(), "temp.xlsx")
-            df=pd.read_excel(dest)
+            dest = os.path.join(os.getcwd(), "temp.xlsx")
+            pd.read_excel(uploaded_file).to_excel(dest, index=False)
             image_to_text(uploaded_file,dest)
             date_conversion(dest,dest)
             df = pd.read_excel(dest)
@@ -46,6 +46,7 @@ try:
         st.write(e)
 except Exception as e:
     st.error(e)
+
 
 
 
