@@ -37,7 +37,7 @@ try:
                                data=template_byte,
                                file_name="Process_chain.xlsx",
                                mime='application/octet-stream')
-            os.remove(os.path.join(os.getcwd(),"Excel_files","temp.xlsx"))
+            os.remove(os.path.join(os.getcwd(),"temp.xlsx"))
     
     
     
@@ -46,6 +46,7 @@ try:
         st.write(e)
 except Exception as e:
     st.error(e)
+
 
 
 
