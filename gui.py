@@ -18,6 +18,7 @@ try:
         uploaded_file = st.sidebar.file_uploader("Upload the file", type="xlsx")
 
         if uploaded_file:
+            file_name=uploaded_file.name.split(".")[0]+"_final.xlsx"
             dest = os.path.join(os.getcwd(), "temp.xlsx")
             pd.read_excel(uploaded_file).to_excel(dest, index=False)
             df=pd.read_excel(dest)
@@ -36,7 +37,7 @@ try:
 
             st.download_button(label="Click to Download Template File",
                            data=template_byte,
-                           file_name=filename,
+                           file_name=file_name,
                            mime='application/octet-stream')
             os.remove(os.path.join(os.getcwd(),"temp.xlsx"))
 
@@ -47,6 +48,7 @@ try:
         st.error(e)
 except Exception as e:
     st.error(e)
+
 
 
 
