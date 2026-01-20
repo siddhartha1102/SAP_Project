@@ -15,7 +15,7 @@ try:
         return [''] * len(row)
 
     try:
-        uploaded_file = st.file_uploader("Upload the file", type="xlsx")
+        uploaded_file = st.sidebar.file_uploader("Upload the file", type="xlsx")
 
         if uploaded_file:
             dest = os.path.join(os.getcwd(), "temp.xlsx")
@@ -47,6 +47,7 @@ try:
         st.error(e)
 except Exception as e:
     st.error(e)
+
 
 
 
